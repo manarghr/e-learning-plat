@@ -1,0 +1,286 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  /* Button Styles */
+  .btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  
+  .btn-primary {
+    background-color: #ffa64d;
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #ff9933;
+  }
+  
+  .btn-secondary {
+    background-color: #1e3a5f;
+    color: white;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #152c48;
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: #1e3a5f;
+    color: white;
+    padding: 15px 0;
+  }
+  
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 60px;
+  }
+  
+  nav ul {
+    display: flex;
+    border-radius: 20%;
+  }
+  
+  nav ul li {
+    margin-left: 25px;
+  }
+  
+  nav ul li a {
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover,
+  nav ul li a.active {
+    color: #ffa64d;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background-color: #f0f5fa;
+    padding: 60px 0;
+  }
+  
+  .hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .hero-content {
+    flex: 1;
+    padding-right: 40px;
+  }
+  
+  .hero-image {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    color: #1e3a5f;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  
+  .hero h2 {
+    font-size: 32px;
+    color: #1e3a5f;
+    margin-bottom: 20px;
+  }
+  
+  .hero h2 span {
+    color: #ffa64d;
+  }
+  
+  .hero p {
+    font-size: 14px;
+    margin-bottom: 30px;
+    max-width: 600px;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  /* How It Works Section */
+  .how-it-works {
+    padding: 60px 0;
+    text-align: center;
+  }
+  
+  .how-it-works h2 {
+    color: #1e3a5f;
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+  
+  .steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  
+  .step {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .step-number {
+    width: 40px;
+    height: 40px;
+    background-color: #1e3a5f;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-weight: 600;
+  }
+  
+  .step h3 {
+    margin-bottom: 10px;
+    color: #1e3a5f;
+  }
+  
+  .step p {
+    font-size: 14px;
+  }
+  
+  /* Why E-Taalim Section */
+  .why-etaalim {
+    padding: 60px 0;
+    background-color: #fff9f2;
+    text-align: center;
+  }
+  
+  .why-etaalim h2 {
+    color: #1e3a5f;
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+  
+  .features {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  
+  .feature {
+    flex: 1;
+    background-color: #d6e6f5;
+    padding: 30px 20px;
+    border-radius: 10px;
+  }
+  
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #1e3a5f;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+  }
+  
+  .feature-icon img {
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) invert(1);
+  }
+  
+  .feature h3 {
+    margin-bottom: 10px;
+    color: #1e3a5f;
+  }
+  
+  .feature p {
+    font-size: 14px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 992px) {
+    .hero .container {
+      flex-direction: column;
+    }
+  
+    .hero-content {
+      padding-right: 0;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  
+    .hero-buttons {
+      justify-content: center;
+    }
+  
+    .steps,
+    .features {
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    header .container {
+      flex-direction: column;
+    }
+  
+    .logo {
+      margin-bottom: 15px;
+    }
+  
+    nav ul {
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    nav ul li {
+      margin: 5px 10px;
+    }
+  }
+  
