@@ -158,6 +158,12 @@
     background-color: #152c48;
   }
   
+  /* Form transitions */
+  #login-form,
+  #register-form {
+    transition: opacity 0.3s ease;
+  }
+  
   @media (max-width: 576px) {
     .container {
       padding: 1.5rem;
