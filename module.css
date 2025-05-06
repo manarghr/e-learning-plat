@@ -108,13 +108,185 @@
     font-size: 14px;
   }
 
+  /*module */
+
+  
+
+
+.module-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+    
+}
+
+.module-main {
+    border: 2px solid;
+    border-color: #1e3a5f;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.module-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sidebar-card {
+    border: 2px solid;
+    border-color: #1e3a5f;
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.categories {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.category-tag {
+    background-color: #1e3a5f;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.module-description {
+    margin: 30px 0;
+    line-height: 1.7;
+    color: #555;
+}
+
+.lessons-list {
+    margin: 20px 0;
+}
+
+.lessons-list li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lessons-list li:before {
+    content: "•";
+    color: #ffa64d;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.mentors-section h3 {
+    margin: 30px 0 20px;
+    color: #1e3a5f;
+}
+
+.mentors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.mentor-card {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    background: #f9f9f9;
+    transition: transform 0.3s;
+}
+
+.mentor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.mentor-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    font-size: 24px;
+}
+
+.mentor-name {
+    font-weight: 600;
+    margin: 5px 0;
+    color: #333;
+}
+
+.mentor-specialty {
+    color: #ffa64d;
+    font-size: 14px;
+}
+
+.course-includes {
+    margin-top: 30px;
+}
+
+.includes-list {
+    margin: 20px 0;
+}
+
+.includes-list li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.includes-list li:before {
+    content: "✓";
+    color: #ffa64d;
+    font-weight: bold;
+}
+
+.newsletter-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*footer*/
   .footer {
     background-color: #1e3a5f;
     color: white;
-    padding: 50px 0 20px;
+    padding: 50px 0px 20px;
     position: relative;
   }
   
