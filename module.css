@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  
+  .btn-primary {
+    background-color: #ffa64d;
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #ff9933;
+  }
+  
+  .btn-secondary {
+    background-color: #1e3a5f;
+    color: white;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #152c48;
+  }
+
+  header {
+    background-color: #1e3a5f;
+    color: white;
+    padding: 10px 0;
+    border-bottom: 1px solid #2c4a6f;
+  }
+  
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+  
+  /* Navigation styles updated to match the image */
+  nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links li {
+    margin: 0 15px;
+  }
+  
+  .nav-links li a {
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+  }
+  
+  .nav-links li a:hover,
+  .nav-links li a.active {
+    color: #ffa64d;
+  }
+  
+  .sign-in .btn {
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+  }
