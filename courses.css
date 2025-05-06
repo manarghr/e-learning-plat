@@ -118,6 +118,166 @@
     line-height: 1.4;
 }
 
+
+
+/*Courses*/
+
+.courses-hero {
+  background-color: #f0f5fa;
+  padding: 80px 0 60px;
+  text-align: center;
+}
+
+.courses-hero h1 {
+  color: #1e3a5f;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.search-filter {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  gap: 15px;
+  padding: 0 20px;
+}
+
+.search-filter input {
+  flex: 1;
+  padding: 12px 20px;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  font-family: "Poppins", sans-serif;
+}
+
+.search-filter select {
+  padding: 12px 20px;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  font-family: "Poppins", sans-serif;
+  background-color: white;
+}
+
+.courses-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.course-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.course-image {
+  height: 180px;
+  background-color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-size: 24px;
+}
+
+.course-content {
+  padding: 20px;
+}
+
+.course-category {
+  display: inline-block;
+  background-color: #1e3a5f;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.course-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: 600;
+}
+
+.course-description {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.course-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.course-duration {
+  color: #666;
+}
+
+.course-price {
+  color: #ffa64d;
+  font-weight: 600;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+  gap: 10px;
+}
+
+.pagination a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f0f5fa;
+  color: #1e3a5f;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.pagination a:hover, .pagination a.active {
+  background-color: #1e3a5f;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .search-filter {
+      flex-direction: column;
+  }
+  
+  .courses-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
 /* Footer Styles */
 .footer {
     background-color: #1e3a5f;
