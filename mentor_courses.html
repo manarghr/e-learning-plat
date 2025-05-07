@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Taalim - Empowering Education</title>
+<link rel="stylesheet" href="mentor_courses.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<!-- Navigation Bar -->
+<header>
+<div class="container">
+    <div class="logo">
+        <img src="images/E-TAALIM.pnj.png" alt="E-Taalim Logo">
+    </div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#" class="active">HOME</a></li>
+            <li><a href="#about">ABOUT US</a></li>
+            <li><a href="#">COURSES</a></li>
+            <li><a href="#">MENTORS</a></li>
+            <li><a href="#">FORUM</a></li>
+            <li><a href="#">CONTACT US</a></li>
+        </ul>
+    </nav>
+    <div class="sign-in">
+        <a href="signup.html" class="btn btn-primary">Sign In</a>
+    </div>
+</div>
+</header>
+
+<div class="hero-text">
+    <h1>My Courses</h1>
+    
+</div>
+
+
+
+<!-- Search  -->
+<div class="search-filters">
+    <h3>Search</h3>
+    <div class="filter-row">
+        <div class="filter-group">
+            <label for="tracking-id">Tracking ID</label>
+            <input type="text" id="tracking-id" placeholder="Enter ID">
+        </div>
+        <div class="filter-group">
+            <label for="course">Course</label>
+            <input type="text" id="course" placeholder="Course name">
+        </div>
+        <div class="filter-group">
+            <label for="time">Time</label>
+            <select id="time">
+                <option value="">Any time</option>
+                <option value="8am">8am</option>
+                <option value="2pm">2pm</option>
+                <option value="3pm">3pm</option>
+            </select>
+        </div>
+    </div>
+    <div class="filter-row">
+        <div class="filter-group">
+            <label for="day">Day</label>
+            <select id="day">
+                <option value="">Any day</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Friday">Friday</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="category">Category</label>
+            <select id="category">
+                <option value="">Any category</option>
+                <option value="Primary school">Primary school</option>
+                <option value="High school">High school</option>
+                <option value="College">College</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="level">Level</label>
+            <select id="level">
+                <option value="">Any level</option>
+                <option value="1st">1st</option>
+                <option value="3rd">3rd</option>
+                <option value="5th">5th</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="price">Price</label>
+            <select id="price">
+                <option value="">Any price</option>
+                <option value="1000-2000">1000-2000</option>
+                <option value="2000-3000">2000-3000</option>
+            </select>
+        </div>
+    </div>
+    <button class="btn btn-primary">Search</button>
+    <button class="btn btn-secondary" style="margin-left: 10px;">Reset</button>
+</div>
+
+<!-- Courses Table -->
+<div class="courses-table-container">
+    <table class="courses-table">
+        <thead>
+            <tr>
+                <th>Tracking ID</th>
+                <th>Course</th>
+                <th>Time</th>
+                <th>Day</th>
+                <th>Category</th>
+                <th>Level</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>#20442</td>
+                <td>Science</td>
+                <td>2pm</td>
+                <td>Monday</td>
+                <td>High school</td>
+                <td>1st</td>
+                <td class="price-cell">1000</td>
+                <td class="action-cell">
+                    <button class="action-btn view-btn">View</button>
+                    <button class="action-btn edit-btn">Edit</button>
+                    <button class="action-btn delete-btn">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>#45059</td>
+                <td>Math</td>
+                <td>3pm</td>
+                <td>Tuesday</td>
+                <td>College</td>
+                <td>3rd</td>
+                <td class="price-cell">2000</td>
+                <td class="action-cell">
+                    <button class="action-btn view-btn">View</button>
+                    <button class="action-btn edit-btn">Edit</button>
+                    <button class="action-btn delete-btn">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>#7788</td>
+                <td>Physique</td>
+                <td>8am</td>
+                <td>Friday</td>
+                <td>Primary school</td>
+                <td>5th</td>
+                <td class="price-cell">1600</td>
+                <td class="action-cell">
+                    <button class="action-btn view-btn">View</button>
+                    <button class="action-btn edit-btn">Edit</button>
+                    <button class="action-btn delete-btn">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>#45609</td>
+                <td>Math</td>
+                <td>3pm</td>
+                <td>Tuesday</td>
+                <td>College</td>
+                <td>3rd</td>
+                <td class="price-cell">2500</td>
+                <td class="action-cell">
+                    <button class="action-btn view-btn">View</button>
+                    <button class="action-btn edit-btn">Edit</button>
+                    <button class="action-btn delete-btn">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>#7788</td>
+                <td>Physique</td>
+                <td>8am</td>
+                <td>Friday</td>
+                <td>Primary school</td>
+                <td>5th</td>
+                <td class="price-cell">1700</td>
+                <td class="action-cell">
+                    <button class="action-btn view-btn">View</button>
+                    <button class="action-btn edit-btn">Edit</button>
+                    <button class="action-btn delete-btn">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>#20442</td>
+                <td>Science</td>
+                <td>2pm</td>
+                <td>Monday</td>
+                <td>High school</td>
+                <td>1st</td>
+                <td class="price-cell">1000</td>
+                <td class="action-cell">
+                    <button class="action-btn view-btn">View</button>
+                    <button class="action-btn edit-btn">Edit</button>
+                    <button class="action-btn delete-btn">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>#20442</td>
+                <td>Science</td>
+                <td>2pm</td>
+                <td>Monday</td>
+                <td>High school</td>
+                <td>1st</td>
+                <td class="price-cell">2000</td>
+                <td class="action-cell">
+                    <button class="action-btn view-btn">View</button>
+                    <button class="action-btn edit-btn">Edit</button>
+                    <button class="action-btn delete-btn">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>#45609</td>
+                <td>Math</td>
+                <td>3pm</td>
+                <td>Tuesday</td>
+                <td>College</td>
+                <td>3rd</td>
+                <td class="price-cell">3000</td>
+                <td class="action-cell">
+                    <button class="action-btn view-btn">View</button>
+                    <button class="action-btn edit-btn">Edit</button>
+                    <button class="action-btn delete-btn">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>#7788</td>
+                <td>Physique</td>
+                <td>8am</td>
+                <td>Friday</td>
+                <td>Primary school</td>
+                <td>5th</td>
+                <td class="price-cell">1600</td>
+                <td class="action-cell">
+                    <button class="action-btn view-btn">View</button>
+                    <button class="action-btn edit-btn">Edit</button>
+                    <button class="action-btn delete-btn">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td>#20442</td>
+                <td>Science</td>
+                <td>2pm</td>
+                <td>Monday</td>
+                <td>High school</td>
+                <td>1st</td>
+                <td class="price-cell">1700</td>
+                <td class="action-cell">
+                    <button class="action-btn view-btn">View</button>
+                    <button class="action-btn edit-btn">Edit</button>
+                    <button class="action-btn delete-btn">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+<div class="footer-content">
+    <div class="footer-logo">
+        <img src="images/E-TAALIM.pnj.png" alt="E-Taalim Logo">
+        <div class="footer-tagline">
+            <p>EMPOWERING EDUCATION</p>
+            <p><span class="highlight">ONE CLICK</span> AT A TIME...</p>
+        </div>
+        <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
+        </div>
+    </div>
+    
+    <div class="footer-newsletter">
+        <h3>Subscribe To Our Newsletter</h3>
+        <p>Get the latest updates on new courses, mentors, and exclusive offers!</p>
+        <div class="newsletter-form">
+            <input type="email" placeholder="Enter your email">
+            <button class="btn btn-primary">Subscribe</button>
+        </div>
+    </div>
+    
+    <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p><i class="fa fa-envelope"></i> support@e_taalim.com</p>
+        <p><i class="fa fa-phone"></i> +213 XX XX XX XX</p>
+        <p><i class="fa fa-map-marker"></i> Algiers, Algeria</p>
+    </div>
+</div>
+
+<div class="footer-bottom">
+    <p>Copyright © 2025 E-Taalim</p>
+    <p>All Rights Reserved | <a href="#">Terms and Conditions</a> | <a href="#">Privacy Policy</a></p>
+</div>
+</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>      
