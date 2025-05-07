@@ -160,17 +160,13 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.mentor-avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-color: #e0e0e0;
-    margin: 0 auto 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #777;
-    font-size: 24px;
+.mentor-avatar img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
 }
 
 .mentor-name {
