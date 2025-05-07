@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+
 * {
   margin: 0;
   padding: 0;
@@ -27,8 +27,8 @@ ul {
 }
 
 img {
-  width: 20px;
-  height: 5px;
+  width: 60px;
+  height: 50px;
 }
 
 /* Button Styles */
@@ -228,6 +228,7 @@ nav {
 
 .footer-logo img {
   width: 150px;
+  height: 100px;
   margin-bottom: 15px;
 }
 
@@ -410,6 +411,198 @@ nav {
   }
 }
 
-.how-it-works{ 
-  background-color:#ffff;
+
+
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Enhanced About Banner */
+.about-banner {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  background: url("images/medium-shot-kid-taking-notes.jpg") no-repeat center center / cover;
+  overflow: hidden;
+}
+
+.about-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(30, 58, 95, 0.8), rgba(255, 166, 77, 0.6));
+  z-index: 1;
+}
+
+.banner-overlay {
+  position: relative;
+  z-index: 2;
+  background-color: transparent;
+}
+
+.banner-overlay h1 {
+  font-size: 56px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.banner-overlay h1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #ffa64d;
+}
+
+/* About Content Section*/
+.about-content {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.about-content .container {
+  max-width: 900px;
+}
+
+.about-content h1 {
+  color: #1e3a5f;
+  font-size: 32px;
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 15px;
+  
+}
+
+.about-content h1::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background-color: #ffa64d;
+  border-radius: 3px;
+}
+
+.about-content p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+  
+}
+
+/* Section dividers */
+.section-divider {
+  display: flex;
+  align-items: center;
+  margin: 40px 0;
+ 
+}
+
+.divider-line {
+  flex-grow: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(30, 58, 95, 0.3), transparent);
+}
+
+.divider-icon {
+  margin: 0 15px;
+  color: #ffa64d;
+  font-size: 20px;
+}
+
+/* Quote styling */
+.quote {
+  background-color: #f8f9fa;
+  border-left: 5px solid #ffa64d;
+  padding: 20px;
+  margin: 30px 0;
+  border-radius: 0 5px 5px 0;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+
+}
+
+/* Final call to action */
+.final-cta {
+  text-align: center;
+  margin: 50px 0;
+  padding: 30px;
+  background: linear-gradient(135deg, #f0f5fa, #e6eef7);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+ 
+}
+
+.final-cta p {
+  font-size: 18px !important;
+  font-style: italic;
+  color: #1e3a5f !important;
+  margin-bottom: 0 !important;
+}
+
+/* Animation classes - these will be added by JavaScript for enhanced animations */
+.animate-fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.animate-slide-left {
+  animation: slideInLeft 0.8s ease forwards;
+}
+
+.animate-scale {
+  animation: pulse 2s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-content h1 {
+    font-size: 28px;
+  }
+
+  .about-content p {
+    font-size: 15px;
+  }
+
+  .final-cta {
+    padding: 20px;
+  }
 }
