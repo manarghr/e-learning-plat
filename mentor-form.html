@@ -40,9 +40,29 @@
             </form>
             
             <!-- Registration Form -->
-              
-              
-            <form id="register-form" style="display: none;">
+            <form id="register-form" class="hidden">
+                <!-- Profile Picture Upload Field -->
+                <div class="form-group profile-picture-group">
+                    <label>Profile Picture:</label>
+                    <div class="profile-picture-container">
+                        <div class="profile-picture-preview">
+                            <span class="profile-placeholder">Photo</span>
+                            <img id="profile-preview" style="display: none;">
+                        </div>
+                        <div class="profile-upload-btn">
+                            <label for="profile-upload" class="upload-label">
+                                <span>+</span>
+                            </label>
+                            <input type="file" id="profile-upload" accept="image/*" class="hidden-upload">
+                        </div>
+                    </div>
+                    <p class="upload-hint">Square image recommended</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reg-name">Full name:</label>
+                    <input type="text" id="reg-name" placeholder="Enter your Full name">
+                </div>
                 <div class="form-group">
                     <label for="reg-name">Full name:</label>
                     <input type="text" id="reg-name" placeholder="Enter your Full name">
@@ -68,7 +88,7 @@
                     <input type="password" id="reg-password" placeholder="Enter your Password">
                     <span class="toggle-password">👁️</span>
 
-                    <button type="submit" class="btn-primary-register">Register</button>
+                    <button type="submit" class="btn-primary">Register</button>
    
 
     <script>
@@ -123,16 +143,38 @@
         document.getElementById('login-form').addEventListener('submit', function(e) {
             e.preventDefault();
             console.log('Login form submitted');
-            // Add your login logic here
+            
         });
 
         document.getElementById('register-form').addEventListener('submit', function(e) {
             e.preventDefault();
             console.log('Registration form submitted');
-            // Add your registration logic here
+            
         });
 
         
+
+        // Add this JavaScript code to your existing script
+document.addEventListener("DOMContentLoaded", () => {
+  const profileUpload = document.getElementById("profile-upload")
+  const profilePreview = document.getElementById("profile-preview")
+  const profilePlaceholder = document.querySelector(".profile-placeholder")
+
+  profileUpload.addEventListener("change", function () {
+    if (this.files && this.files[0]) {
+      const reader = new FileReader()
+
+      reader.onload = (e) => {
+        profilePreview.src = e.target.result
+        profilePreview.style.display = "block"
+        profilePlaceholder.style.display = "none"
+      }
+
+      reader.readAsDataURL(this.files[0])
+    }
+  })
+})
+
     </script>
 </body>
 </html>

@@ -64,6 +64,9 @@ header {
   color: white;
   padding: 10px 0;
   border-bottom: 1px solid #2c4a6f;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 header .container {
@@ -110,6 +113,89 @@ nav {
   font-size: 14px;
 }
 
+/* Why E-Taalim Section - Moved to top and updated */
+.why-etaalim {
+  padding: 40px 0;
+  background-color: #f0f5fa;
+  text-align: center;
+}
+
+.why-etaalim h2 {
+  color: #1e3a5f;
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.feature {
+  flex: 1;
+  background-color: white;
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.animated-box {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.feature:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.feature:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #1e3a5f;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+}
+
+.feature-icon img {
+  width: 30px;
+  height: 30px;
+  filter: brightness(0) invert(1);
+}
+
+.feature h3 {
+  margin-bottom: 10px;
+  color: #1e3a5f;
+}
+
+.feature p {
+  font-size: 14px;
+}
+
 /* Hero Section */
 .hero {
   background-color: #f0f5fa;
@@ -135,7 +221,7 @@ nav {
 
 .logo-squares {
   position: absolute;
-  top: 0;
+  top: -35px;
   right: 50%;
   transform: translateX(50%);
   width: 70px;
@@ -148,6 +234,17 @@ nav {
   grid-template-rows: 1fr 1fr;
   gap: 5px;
   padding: 10px;
+  animation: rotate 10s linear infinite;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes rotate {
+  0% {
+    transform: translateX(50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(50%) rotate(360deg);
+  }
 }
 
 .square {
@@ -214,6 +311,7 @@ nav {
 .how-it-works {
   padding: 60px 0;
   text-align: center;
+  background-color: white;
 }
 
 .how-it-works h2 {
@@ -231,6 +329,11 @@ nav {
 .step {
   flex: 1;
   padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-10px);
 }
 
 .step-number {
@@ -255,56 +358,131 @@ nav {
   font-size: 14px;
 }
 
-/* Why E-Taalim Section */
-.why-etaalim {
+/* About Us Section */
+.about-us {
   padding: 60px 0;
-  background-color: #fff9f2;
-  text-align: center;
+  background-color: #f0f5fa;
 }
 
-.why-etaalim h2 {
+.about-us h2 {
   color: #1e3a5f;
   font-size: 28px;
+  text-align: center;
   margin-bottom: 40px;
 }
 
-.features {
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-}
-
-.feature {
-  flex: 1;
-  background-color: #d6e6f5;
-  padding: 30px 20px;
-  border-radius: 10px;
-}
-
-.feature-icon {
-  width: 60px;
-  height: 60px;
-  background-color: #1e3a5f;
-  border-radius: 50%;
+.about-content {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 0 auto 15px;
+  gap: 40px;
 }
 
-.feature-icon img {
-  width: 30px;
-  height: 30px;
-  filter: brightness(0) invert(1);
+.about-image {
+  flex: 1;
 }
 
-.feature h3 {
-  margin-bottom: 10px;
+.about-image img {
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h3 {
+  color: #1e3a5f;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.about-stats {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffa64d;
+}
+
+.stat-text {
+  font-size: 16px;
   color: #1e3a5f;
 }
 
-.feature p {
-  font-size: 14px;
+/* FAQ Section */
+.faq-section {
+  padding: 60px 0;
+  background-color: white;
+}
+
+.faq-section h2 {
+  color: #1e3a5f;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: 20px;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-question h3 {
+  font-size: 18px;
+  color: #1e3a5f;
+  margin: 0;
+}
+
+.faq-toggle {
+  color: #ffa64d;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+  padding: 20px;
+  max-height: 200px;
+}
+
+.faq-item.active .faq-toggle {
+  transform: rotate(45deg);
 }
 
 /* Footer Styles */
@@ -483,6 +661,10 @@ nav {
 
   .steps,
   .features {
+    flex-direction: column;
+  }
+
+  .about-content {
     flex-direction: column;
   }
 
