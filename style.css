@@ -361,7 +361,7 @@ nav {
 /* About Us Section */
 .about-us {
   padding: 60px 0;
-  background-color: #f0f5fa;
+  background-color: #ffffff;
 }
 
 .about-us h2 {
@@ -426,7 +426,7 @@ nav {
 /* FAQ Section */
 .faq-section {
   padding: 60px 0;
-  background-color: white;
+  background-color:  #f0f5fa;
 }
 
 .faq-section h2 {
@@ -450,7 +450,7 @@ nav {
 
 .faq-question {
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #f0f0f0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -470,6 +470,7 @@ nav {
 }
 
 .faq-answer {
+  background-color: white;
   padding: 0 20px;
   max-height: 0;
   overflow: hidden;
@@ -707,4 +708,8 @@ nav {
     flex-direction: column;
     text-align: center;
   }
+}
+
+.how-it-works{ 
+  background-color:#ffff;
 }
