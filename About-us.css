@@ -1,415 +1,608 @@
-/* Reset and Base Styles */
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: "Poppins", sans-serif;
-    color: #333;
-    line-height: 1.6;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  ul {
-    list-style: none;
-  }
-  
-  img {
-    width: 20px;
-    height: 5px;
-  }
-  
-  /* Button Styles */
-  .btn {
-    display: inline-block;
-    padding: 10px 25px;
-    border-radius: 30px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    text-align: center;
-  }
-  
-  .btn-primary {
-    background-color: #ffa64d;
-    color: white;
-  }
-  
-  .btn-primary:hover {
-    background-color: #ff9933;
-  }
-  
-  .btn-secondary {
-    background-color: #1e3a5f;
-    color: white;
-  }
-  
-  .btn-secondary:hover {
-    background-color: #152c48;
-  }
-  
-  /* Header Styles - Updated to match the image */
-  header {
-    background-color: #1e3a5f;
-    color: white;
-    padding: 10px 0;
-    border-bottom: 1px solid #2c4a6f;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .logo img {
-    height: 40px;
-  }
-  
-  /* Navigation styles updated to match the image */
-  nav {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .nav-links {
-    display: flex;
-    align-items: center;
-  }
-  
-  .nav-links li {
-    margin: 0 15px;
-  }
-  
-  .nav-links li a {
-    font-size: 14px;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    padding: 5px 0;
-  }
-  
-  .nav-links li a:hover,
-  .nav-links li a.active {
-    color: #ffa64d;
-  }
-  
-  .sign-in .btn {
-    padding: 8px 20px;
-    border-radius: 25px;
-    font-size: 14px;
-  }
-  
-  /* Hero Section */
-  .hero {
-    background-color: #f0f5fa;
-    padding: 60px 0;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 60px;
+  height: 50px;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #ffa64d;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #ff9933;
+}
+
+.btn-secondary {
+  background-color: #1e3a5f;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #152c48;
+}
+
+/* Header Styles - Updated to match the image */
+header {
+  background-color: #1e3a5f;
+  color: white;
+  padding: 10px 0;
+  border-bottom: 1px solid #2c4a6f;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+}
+
+/* Navigation styles updated to match the image */
+nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links li a {
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 5px 0;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #ffa64d;
+}
+
+.sign-in .btn {
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #f0f5fa;
+  padding: 60px 0;
+}
+
+.hero .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-content {
+  flex: 1;
+  padding-right: 40px;
+}
+
+/* About Banner Section */
+.about-banner {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: url('images/medium-shot-kid-taking-notes.jpg') no-repeat center center/cover;
+}
+
+.banner-overlay {
+  background-color: rgba(0, 0, 50, 0.3); /* dark overlay */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.banner-overlay h1 {
+  color: white;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.banner-overlay p {
+  color: white;
+  font-size: 16px;
+  opacity: 0.85;
+}
+
+.hero h1 {
+  color: #1e3a5f;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.hero h2 {
+  font-size: 32px;
+  color: #1e3a5f;
+  margin-bottom: 20px;
+}
+
+.hero h2 span {
+  color: #ffa64d;
+}
+
+.hero p {
+  font-size: 14px;
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #1e3a5f;
+  color: white;
+  padding: 50px 0 20px;
+  position: relative;
+}
+
+.footer::before,
+.footer::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+}
+
+.footer::before {
+  top: 0;
+}
+
+.footer::after {
+  bottom: 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.footer-logo {
+  flex: 1;
+  min-width: 250px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  width: 150px;
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+.footer-tagline {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.footer-tagline .highlight {
+  color: #ffa64d;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: #ffa64d;
+  transform: translateY(-3px);
+}
+
+.footer-newsletter {
+  flex: 1;
+  min-width: 250px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.footer-newsletter h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.footer-newsletter p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newsletter-form input {
+  padding: 12px 15px;
+  border-radius: 25px;
+  border: none;
+  font-size: 14px;
+  width: 100%;
+}
+
+.newsletter-form .btn {
+  align-self: flex-start;
+}
+
+.footer-contact {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-contact h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.footer-contact p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.footer-contact i {
+  margin-right: 10px;
+  width: 20px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.footer-bottom a {
+  color: #ffa64d;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
   .hero .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .hero-content {
-    flex: 1;
-    padding-right: 40px;
-  }
-  
-  /* About Banner Section */
-  .about-banner {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    background: url('images/medium-shot-kid-taking-notes.jpg') no-repeat center center/cover;
-  }
-  
-  .banner-overlay {
-    background-color: rgba(0, 0, 50, 0.3); /* dark overlay */
-    width: 100%;
-    height: 100%;
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  }
+
+  .hero-content {
+    padding-right: 0;
+    margin-bottom: 40px;
     text-align: center;
   }
-  
-  .banner-overlay h1 {
-    color: white;
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 10px;
+
+  .hero-buttons {
+    justify-content: center;
   }
-  
-  .banner-overlay p {
-    color: white;
-    font-size: 16px;
-    opacity: 0.85;
+
+  .steps,
+  .features {
+    flex-direction: column;
   }
-  
-  .hero h1 {
-    color: #1e3a5f;
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 5px;
+
+  .about-content {
+    flex-direction: column;
   }
-  
-  .hero h2 {
-    font-size: 32px;
-    color: #1e3a5f;
-    margin-bottom: 20px;
-  }
-  
-  .hero h2 span {
-    color: #ffa64d;
-  }
-  
-  .hero p {
-    font-size: 14px;
-    margin-bottom: 30px;
-    max-width: 600px;
-  }
-  
-  /* Footer Styles */
-  .footer {
-    background-color: #1e3a5f;
-    color: white;
-    padding: 50px 0 20px;
-    position: relative;
-  }
-  
-  .footer::before,
-  .footer::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-  }
-  
-  .footer::before {
-    top: 0;
-  }
-  
-  .footer::after {
-    bottom: 0;
-  }
-  
+
   .footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .footer-logo,
+  .footer-newsletter,
+  .footer-contact {
+    margin-right: 0;
     margin-bottom: 40px;
   }
-  
-  .footer-logo {
-    flex: 1;
-    min-width: 250px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .footer-logo img {
-    width: 150px;
-    margin-bottom: 15px;
-  }
-  
-  .footer-tagline {
-    font-size: 14px;
-    line-height: 1.4;
-    margin-bottom: 20px;
-  }
-  
-  .footer-tagline .highlight {
-    color: #ffa64d;
-  }
-  
-  .social-icons {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .social-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-  }
-  
-  .social-icons a:hover {
-    background-color: #ffa64d;
-    transform: translateY(-3px);
-  }
-  
-  .footer-newsletter {
-    flex: 1;
-    min-width: 250px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .footer-newsletter h3 {
-    font-size: 20px;
-    margin-bottom: 15px;
-  }
-  
-  .footer-newsletter p {
-    font-size: 14px;
-    margin-bottom: 20px;
-    opacity: 0.8;
-  }
-  
-  .newsletter-form {
-    display: flex;
+}
+
+@media (max-width: 768px) {
+  header .container {
     flex-direction: column;
-    gap: 10px;
   }
-  
-  .newsletter-form input {
-    padding: 12px 15px;
-    border-radius: 25px;
-    border: none;
-    font-size: 14px;
+
+  .logo {
+    margin-bottom: 15px;
+  }
+
+  nav {
     width: 100%;
   }
-  
-  .newsletter-form .btn {
-    align-self: flex-start;
-  }
-  
-  .footer-contact {
-    flex: 1;
-    min-width: 250px;
-  }
-  
-  .footer-contact h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .footer-contact p {
-    display: flex;
-    align-items: center;
+
+  .nav-links {
     margin-bottom: 15px;
-    font-size: 14px;
-  }
-  
-  .footer-contact i {
-    margin-right: 10px;
-    width: 20px;
-  }
-  
-  .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
     flex-wrap: wrap;
-    gap: 10px;
+    justify-content: center;
   }
-  
-  .footer-bottom p {
-    font-size: 14px;
-    opacity: 0.7;
+
+  .nav-links li {
+    margin: 5px 10px;
   }
-  
-  .footer-bottom a {
-    color: #ffa64d;
-    transition: color 0.3s ease;
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
   }
-  
-  .footer-bottom a:hover {
-    color: white;
+}
+
+
+
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  /* Responsive Styles */
-  @media (max-width: 992px) {
-    .hero .container {
-      flex-direction: column;
-    }
-  
-    .hero-content {
-      padding-right: 0;
-      margin-bottom: 40px;
-      text-align: center;
-    }
-  
-    .hero-buttons {
-      justify-content: center;
-    }
-  
-    .steps,
-    .features {
-      flex-direction: column;
-    }
-  
-    .about-content {
-      flex-direction: column;
-    }
-  
-    .footer-content {
-      flex-direction: column;
-    }
-  
-    .footer-logo,
-    .footer-newsletter,
-    .footer-contact {
-      margin-right: 0;
-      margin-bottom: 40px;
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  @media (max-width: 768px) {
-    header .container {
-      flex-direction: column;
-    }
-  
-    .logo {
-      margin-bottom: 15px;
-    }
-  
-    nav {
-      width: 100%;
-    }
-  
-    .nav-links {
-      margin-bottom: 15px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  
-    .nav-links li {
-      margin: 5px 10px;
-    }
-  
-    .footer-bottom {
-      flex-direction: column;
-      text-align: center;
-    }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
   }
-  
-  .how-it-works{ 
-    background-color:#ffff;
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Enhanced About Banner */
+.about-banner {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  background: url("images/medium-shot-kid-taking-notes.jpg") no-repeat center center / cover;
+  overflow: hidden;
+}
+
+.about-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(30, 58, 95, 0.8), rgba(255, 166, 77, 0.6));
+  z-index: 1;
+}
+
+.banner-overlay {
+  position: relative;
+  z-index: 2;
+  background-color: transparent;
+}
+
+.banner-overlay h1 {
+  font-size: 56px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.banner-overlay h1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #ffa64d;
+}
+
+/* About Content Section*/
+.about-content {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.about-content .container {
+  max-width: 900px;
+}
+
+.about-content h1 {
+  color: #1e3a5f;
+  font-size: 32px;
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 15px;
+  
+}
+
+.about-content h1::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background-color: #ffa64d;
+  border-radius: 3px;
+}
+
+.about-content p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+  
+}
+
+/* Section dividers */
+.section-divider {
+  display: flex;
+  align-items: center;
+  margin: 40px 0;
+ 
+}
+
+.divider-line {
+  flex-grow: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(30, 58, 95, 0.3), transparent);
+}
+
+.divider-icon {
+  margin: 0 15px;
+  color: #ffa64d;
+  font-size: 20px;
+}
+
+/* Quote styling */
+.quote {
+  background-color: #f8f9fa;
+  border-left: 5px solid #ffa64d;
+  padding: 20px;
+  margin: 30px 0;
+  border-radius: 0 5px 5px 0;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+
+}
+
+/* Final call to action */
+.final-cta {
+  text-align: center;
+  margin: 50px 0;
+  padding: 30px;
+  background: linear-gradient(135deg, #f0f5fa, #e6eef7);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+ 
+}
+
+.final-cta p {
+  font-size: 18px !important;
+  font-style: italic;
+  color: #1e3a5f !important;
+  margin-bottom: 0 !important;
+}
+
+/* Animation classes - these will be added by JavaScript for enhanced animations */
+.animate-fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.animate-slide-left {
+  animation: slideInLeft 0.8s ease forwards;
+}
+
+.animate-scale {
+  animation: pulse 2s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-content h1 {
+    font-size: 28px;
+  }
+
+  .about-content p {
+    font-size: 15px;
+  }
+
+  .final-cta {
+    padding: 20px;
+  }
+}
