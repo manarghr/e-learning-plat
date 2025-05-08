@@ -3,178 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Taalim - Login & Registration</title>
-    <link rel="stylesheet" href="signup.css">
+    <title>E-Taalim - Mentor Registration</title>
+    <link rel="stylesheet" href="mentor-form.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <section class="auth-form">
-        <div class="container">
-            <h2>Welcome to E-Taalim :) </h2>
-            <div class="auth-tabs">
-                <button class="tab active" id="login-tab">Login</button>
-                <button class="tab" id="register-tab">Register</button>
+    <!-- Close button -->
+    <div class="close-btn" id="close-btn" title="Close">
+        <i class="fas fa-times"></i>
+    </div>
+    
+    <!-- Welcome header outside the form -->
+    <div class="welcome-header">
+        <h1>Welcome to E-Taalim</h1>
+        <p><strong>our community of expert mentors and help shape the future of education.</strong> </p>
+    </div>
+    
+    <div class="login-container register-mode">
+        <!-- Image Container (Left Side) -->
+        <div class="image-container">
+            <div class="image-content">
+                <h3>Join Our Teaching Community</h3>
+                <p>Share your knowledge and expertise with students around the world. Become a mentor today!</p>
             </div>
-            <div class="user-type" id="user-type-container">
-                <button class="user-type-btn active">Mentor</button>
+            <div class="image-placeholder">
+                <span class="profile-placeholder"><i class="fas fa-user-circle fa-3x"></i></span>
+                <img id="profile-preview-large" style="display: none;">
             </div>
+            <p class="upload-instructions">Upload your professional photo</p>
+            <p class="upload-hint">This will be displayed on your mentor profile</p>
             
-            <!-- Login Form -->
-            <form id="login-form">
-                <div class="form-group">
-                    <label for="login-email">Email:</label>
-                    <input type="email" id="login-email" placeholder="Enter your Email">
-                </div>
-                <div class="form-group password-group">
-                    <label for="login-password">Password:</label>
-                    <input type="password" id="login-password" placeholder="Enter your Password">
-                    <span class="toggle-password">👁️</span>
-                </div>
-                <div class="form-options">
-                    <label class="remember-me">
-                        <input type="checkbox"> Remember me
-                    </label>
-                    <a href="#" class="forgot-password">Forgot Password?</a>
-                </div>
-                <button type="submit" class="btn-primary">Login</button>
-            </form>
-            
-            <!-- Registration Form -->
-            <form id="register-form" class="hidden">
-                <!-- Profile Picture Upload Field -->
-                <div class="form-group profile-picture-group">
-                    <label>Profile Picture:</label>
-                    <div class="profile-picture-container">
-                        <div class="profile-picture-preview">
-                            <span class="profile-placeholder">Photo</span>
-                            <img id="profile-preview" style="display: none;">
-                        </div>
-                        <div class="profile-upload-btn">
-                            <label for="profile-upload" class="upload-label">
-                                <span>+</span>
-                            </label>
-                            <input type="file" id="profile-upload" accept="image/*" class="hidden-upload">
-                        </div>
+            <!-- Image Editor Controls -->
+            <div class="image-editor-controls">
+                <div class="control-group">
+                    <label for="zoom-slider">Zoom</label>
+                    <div class="slider-container">
+                        <input type="range" id="zoom-slider" min="50" max="150" value="100">
+                        <span class="slider-value" id="zoom-value">100%</span>
                     </div>
-                    <p class="upload-hint">Square image recommended</p>
+                </div>
+                <div class="control-group">
+                    <label for="rotate-slider">Rotate</label>
+                    <div class="slider-container">
+                        <input type="range" id="rotate-slider" min="-180" max="180" value="0">
+                        <span class="slider-value" id="rotate-value">0°</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Form Container (Right Side) -->
+        <div class="form-container">
+            <div class="form-content">
+                <!-- Tabs with slider effect -->
+                <div class="auth-tabs">
+                    <div class="tab-slider"></div>
+                    <button class="tab" id="login-tab">Login</button>
+                    <button class="tab active" id="register-tab">Register</button>
                 </div>
                 
-                <div class="form-group">
-                    <label for="reg-name">Full name:</label>
-                    <input type="text" id="reg-name" placeholder="Enter your Full name">
+                <div class="user-type-container" id="user-type-container">
+                    <button class="user-type-btn active">Mentor</button>
+                    
                 </div>
-                <div class="form-group">
-                    <label for="reg-name">Full name:</label>
-                    <input type="text" id="reg-name" placeholder="Enter your Full name">
+                
+                <!-- Success Message -->
+                <div class="success-message">
+                    <span class="success-icon"><i class="fas fa-check-circle"></i></span>
+                    Registration successful! Please check your email to verify your account.
                 </div>
-                <div class="form-group">
-                    <label for="reg-email">Email:</label>
-                    <input type="email" id="reg-email" placeholder="Enter your Email">
-                </div>
-                <div class="form-group">
-                    <label for="reg-phone">Phone number:</label>
-                    <input type="tel" id="reg-phone" placeholder="Enter your Phone">
-                </div>
-                <div class="form-group">
-                    <label for="reg-major">Major:</label>
-                    <input type="text" id="reg-major" placeholder="Enter your Major">
-                </div>
-                <div class="form-group">
-                    <label for="reg-level">Level:</label>
-                    <input type="text" id="reg-level" placeholder="Enter your Level">
-                </div>
-                <div class="form-group password-group">
-                    <label for="reg-password">Password:</label>
-                    <input type="password" id="reg-password" placeholder="Enter your Password">
-                    <span class="toggle-password">👁️</span>
-
-                    <button type="submit" class="btn-primary">Register</button>
-   
-
-    <script>
-        // Toggle password visibility for both forms
-        document.querySelectorAll('.toggle-password').forEach(function(toggle) {
-            toggle.addEventListener('click', function() {
-                const passwordInput = this.previousElementSibling;
-                if (passwordInput.type === 'password') {
-                    passwordInput.type = 'text';
-                    this.textContent = '👁️‍🗨️';
-                } else {
-                    passwordInput.type = 'password';
-                    this.textContent = '👁️';
-                }
-            });
-        });
-
-        // Tab switching and form toggling
-        const loginTab = document.getElementById('login-tab');
-        const registerTab = document.getElementById('register-tab');
-        const loginForm = document.getElementById('login-form');
-        const registerForm = document.getElementById('register-form');
-        const userTypeContainer = document.getElementById('user-type-container');
-
-        loginTab.addEventListener('click', function() {
-            // Switch to login mode
-            loginTab.classList.add('active');
-            registerTab.classList.remove('active');
-            
-            // Show login form, hide registration form
-            loginForm.style.display = 'block';
-            registerForm.style.display = 'none';
-            
-            // Hide user type selector for login
-            userTypeContainer.style.display = 'none';
-        });
-
-        registerTab.addEventListener('click', function() {
-            // Switch to register mode
-            registerTab.classList.add('active');
-            loginTab.classList.remove('active');
-            
-            // Show registration form, hide login form
-            registerForm.style.display = 'block';
-            loginForm.style.display = 'none';
-            
-            // Show user type selector for registration
-            userTypeContainer.style.display = 'flex';
-        });
-
-        // Form submission
-        document.getElementById('login-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            console.log('Login form submitted');
-            
-        });
-
-        document.getElementById('register-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            console.log('Registration form submitted');
-            
-        });
-
-        
-
-        // Add this JavaScript code to your existing script
-document.addEventListener("DOMContentLoaded", () => {
-  const profileUpload = document.getElementById("profile-upload")
-  const profilePreview = document.getElementById("profile-preview")
-  const profilePlaceholder = document.querySelector(".profile-placeholder")
-
-  profileUpload.addEventListener("change", function () {
-    if (this.files && this.files[0]) {
-      const reader = new FileReader()
-
-      reader.onload = (e) => {
-        profilePreview.src = e.target.result
-        profilePreview.style.display = "block"
-        profilePlaceholder.style.display = "none"
-      }
-
-      reader.readAsDataURL(this.files[0])
-    }
-  })
-})
-
-    </script>
+                
+                <!-- Login Form -->
+                <form id="login-form" style="display: none;" class="login-form-container">
+                    <div class="form-group">
+                        <label for="login-email">Email Address</label>
+                        <input type="email" id="login-email" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <div class="password-input-container">
+                            <input type="password" id="login-password" placeholder="Enter your password" required>
+                            <span class="toggle-password">👁️</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox"> Remember me
+                        </label>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">
+                        <span class="loading-indicator"></span>
+                        Login
+                    </button>
+                </form>
+                
+                <!-- Registration Form -->
+                <form id="register-form">
+                    <!-- Profile Information Section -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Profile Information</h3>
+                        
+                        <!-- Profile Picture Upload -->
+                        <div class="form-group profile-picture-group">
+                            <label>Profile Picture</label>
+                            <div class="profile-picture-container">
+                                <div class="profile-picture-preview">
+                                    <span class="profile-placeholder"><i class="fas fa-user"></i></span>
+                                    <img id="profile-preview" style="display: none;">
+                                </div>
+                                <div class="profile-upload-btn">
+                                    <label for="profile-upload" class="upload-label">
+                                        <i class="fas fa-camera"></i>
+                                    </label>
+                                    <label for="profile-upload" class="sr-only">Upload Profile Picture</label>
+                                    <input type="file" id="profile-upload" accept="image/*" class="hidden-upload" title="Upload your profile picture">
+                                </div>
+                            </div>
+                            <p class="upload-hint">Professional headshot recommended (square image)</p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reg-name">Full Name</label>
+                            <input type="text" id="reg-name" placeholder="Enter your full name" required>
+                            <div class="error-message">Please enter your full name</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reg-email">Email Address</label>
+                            <input type="email" id="reg-email" placeholder="Enter your email address" required>
+                            <div class="error-message">Please enter a valid email address</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reg-phone">Phone Number</label>
+                            <input type="tel" id="reg-phone" placeholder="Enter your phone number" required>
+                            <div class="error-message">Please enter a valid phone number</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Professional Information Section -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Professional Information</h3>
+                        
+                        <div class="form-group">
+                            <label for="reg-major">Field of Expertise</label>
+                            <input type="text" id="reg-major" placeholder="E.g., Computer Science, Mathematics" required>
+                            <div class="error-message">Please enter your field of expertise</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reg-level">Education Level</label>
+                            <input type="text" id="reg-level" placeholder="E.g., PhD, Master's Degree" required>
+                            <div class="error-message">Please enter your education level</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="experience">Years of Experience <span class="tooltip">ⓘ<span class="tooltip-text">How many years have you been teaching or working in your field?</span></span></label>
+                            <div class="experience-counter">
+                                <button type="button" class="counter-btn" id="decrease-exp" disabled>-</button>
+                                <div class="counter-value" id="exp-value">0</div>
+                                <button type="button" class="counter-btn" id="increase-exp">+</button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Specialties/Skills</label>
+                            <div class="specialty-tags">
+                            </div>
+                            <div class="add-specialty">
+                                <input type="text" id="specialty-input" placeholder="Add a specialty or skill">
+                                <button type="button" id="add-specialty-btn">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Account Information Section -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Account Information</h3>
+                        
+                        <div class="form-group">
+                            <label for="reg-password">Password</label>
+                            <div class="password-input-container">
+                                <input type="password" id="reg-password" placeholder="Create a password" required>
+                                <span class="toggle-password">👁️</span>
+                            </div>
+                            <div class="error-message">Password must be at least 8 characters</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reg-confirm-password">Confirm Password</label>
+                            <div class="password-input-container">
+                                <input type="password" id="reg-confirm-password" placeholder="Confirm your password" required>
+                                <span class="toggle-password">👁️</span>
+                            </div>
+                            <div class="error-message">Passwords do not match</div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">
+                        <span class="loading-indicator"></span>
+                        Create Account
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="mentor-form.js"></script>
+    <script src="mentor-form-validation.js"></script>
 </body>
 </html>
