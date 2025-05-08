@@ -86,6 +86,8 @@ body {
   width: 400px; /* Reduced from 500px to make it more compact */
   max-height: 450px; /* Reduced height for login mode */
   margin-left: -38px;
+  padding-top: 10px;
+  margin-top: 20px;
 }
 
 /* Register mode - wider container */
@@ -202,7 +204,8 @@ body {
   align-items: center;
   height: 100%;
   padding: 4px;
-  margin-left: -38px;
+  margin-left: -32px;
+  margin-top: -5px;
 }
 
 /* Add this new CSS for the sticky header */
@@ -214,6 +217,7 @@ body {
   padding-bottom: 15px;
   z-index: 10;
   border-bottom: 1px solid #f0f0f0;
+  margin-left: 40px;
 }
 
 .form-content {
