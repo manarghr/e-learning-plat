@@ -155,12 +155,14 @@ nav {
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 10px;
+  animation: fadeIn 1s ease;
 }
 
 .banner-overlay p {
   color: white;
   font-size: 16px;
   opacity: 0.85;
+  animation: fadeIn 1s ease;
 }
 
 .hero h1 {
@@ -490,9 +492,19 @@ nav {
   width: 80px;
   height: 4px;
   background-color: #ffa64d;
+  animation: widthGrow 1s ease 0.5s forwards;
+
 }
 
-/* About Content Section*/
+@keyframes widthGrow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80px;
+  }
+}
+
 .about-content {
   padding: 60px 0;
   overflow: hidden;
