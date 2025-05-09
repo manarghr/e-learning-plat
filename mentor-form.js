@@ -362,7 +362,7 @@ document.addEventListener("DOMContentLoaded", () => {
       )
     }
   
-    // Add this new code to ensure the image placeholders are perfectly circular
+    // the image placeholders are perfectly circular
     const fixCircularImages = () => {
       // Fix the large profile image in the blue panel
       const imageContainer = document.querySelector(".image-placeholder")
@@ -389,3 +389,36 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", fixCircularImages)
   })
   
+  
+
+// Make the floating symbols more dynamic
+document.addEventListener("DOMContentLoaded", () => {
+  const floatingSymbols = document.querySelectorAll(".floating-symbol")
+
+  // Randomize initial positions slightly
+  floatingSymbols.forEach((symbol) => {
+    const randomX = Math.random() * 10 - 5 // -5 to 5
+    const randomY = Math.random() * 10 - 5 // -5 to 5
+    const randomRotate = Math.random() * 10 - 5 // -5 to 5
+
+    symbol.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${randomRotate}deg)`
+
+    // Add subtle hover effect when cursor is near symbols
+    document.addEventListener("mousemove", (e) => {
+      const mouseX = e.clientX
+      const mouseY = e.clientY
+      const rect = symbol.getBoundingClientRect()
+      const symbolX = rect.left + rect.width / 2
+      const symbolY = rect.top + rect.height / 2
+
+      const distance = Math.sqrt(Math.pow(mouseX - symbolX, 2) + Math.pow(mouseY - symbolY, 2))
+
+      // If mouse is within 150px of the symbol
+      if (distance < 150) {
+        const moveX = (mouseX - symbolX) / 20
+        const moveY = (mouseY - symbolY) / 20
+        symbol.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.1)`
+      }
+    })
+  })
+})
