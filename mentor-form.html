@@ -155,19 +155,19 @@
                         
                         <div class="form-group">
                             <label for="reg-name">Full Name</label>
-                            <input type="text" id="reg-name" placeholder="Enter your full name" required>
+                            <input type="text" id="reg-name" name="name" placeholder="Enter your full name" required>
                             <div class="error-message">Please enter your full name</div>
                         </div>
                         
                         <div class="form-group">
                             <label for="reg-email">Email Address</label>
-                            <input type="email" id="reg-email" placeholder="Enter your email address" required>
+                            <input type="email" id="reg-email" name="email" placeholder="Enter your email address" required>
                             <div class="error-message">Please enter a valid email address</div>
                         </div>
                         
                         <div class="form-group">
                             <label for="reg-phone">Phone Number</label>
-                            <input type="tel" id="reg-phone" placeholder="Enter your phone number" required>
+                            <input type="tel" id="reg-phone" name="phone" placeholder="Enter your phone number" required>
                             <div class="error-message">Please enter a valid phone number</div>
                         </div>
                     </div>
@@ -178,13 +178,13 @@
                         
                         <div class="form-group">
                             <label for="reg-major">Field of Expertise</label>
-                            <input type="text" id="reg-major" placeholder="E.g., Computer Science, Mathematics" required>
+                            <input type="text" id="reg-major" name="major" placeholder="E.g., Computer Science, Mathematics" required>
                             <div class="error-message">Please enter your field of expertise</div>
                         </div>
                         
                         <div class="form-group">
                             <label for="reg-level">Education Level</label>
-                            <input type="text" id="reg-level" placeholder="E.g., PhD, Master's Degree" required>
+                            <input type="text" id="reg-level" name="level" placeholder="E.g., PhD, Master's Degree" required>
                             <div class="error-message">Please enter your education level</div>
                         </div>
                         
@@ -193,6 +193,8 @@
                             <div class="experience-counter">
                                 <button type="button" class="counter-btn" id="decrease-exp" disabled>-</button>
                                 <div class="counter-value" id="exp-value">0</div>
+                                <input type="hidden" name="experience" id="experience-input" value="0">
+
                                 <button type="button" class="counter-btn" id="increase-exp">+</button>
                             </div>
                         </div>

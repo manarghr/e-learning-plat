@@ -245,51 +245,81 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   
-    // Form validation
-    const registerFormElement = document.getElementById("register-form")
+    // // Form validation
+    // const registerFormElement = document.getElementById("register-form")
+    // if (registerFormElement) {
+    //   registerFormElement.addEventListener("submit", (e) => {
+    //     e.preventDefault()
+  
+    //     // Simple validation example
+    //     let isValid = true
+    //     const requiredFields = registerFormElement.querySelectorAll("[required]")
+  
+    //     requiredFields.forEach((field) => {
+    //       const formGroup = field.closest(".form-group")
+    //       if (!field.value.trim()) {
+    //         formGroup.classList.add("error")
+    //         isValid = false
+    //       } else {
+    //         formGroup.classList.remove("error")
+    //       }
+    //     })
+  
+    //     if (isValid) {
+    //       // Show loading state
+    //       const submitBtn = registerFormElement.querySelector(".btn-primary")
+    //       submitBtn.classList.add("loading")
+    //       submitBtn.disabled = true
+  
+    //       // Simulate form submission
+    //       setTimeout(() => {
+    //         submitBtn.classList.remove("loading")
+    //         submitBtn.disabled = false
+  
+    //         // Show success message
+    //         const successMessage = document.querySelector(".success-message")
+    //         if (successMessage) {
+    //           successMessage.classList.add("show")
+  
+    //           // Hide success message after 3 seconds
+    //           setTimeout(() => {
+    //             successMessage.classList.remove("show")
+    //           }, 3000)
+    //         }
+    //       }, 1500)
+    //     }
+    //   })
+    // }
+
+
+    const registerFormElement = document.getElementById("register-form");
     if (registerFormElement) {
       registerFormElement.addEventListener("submit", (e) => {
-        e.preventDefault()
-  
-        // Simple validation example
-        let isValid = true
-        const requiredFields = registerFormElement.querySelectorAll("[required]")
-  
+        e.preventDefault();
+
+        // Simple validation
+        let isValid = true;
+        const requiredFields = registerFormElement.querySelectorAll("[required]");
+
         requiredFields.forEach((field) => {
-          const formGroup = field.closest(".form-group")
+          const formGroup = field.closest(".form-group");
           if (!field.value.trim()) {
-            formGroup.classList.add("error")
-            isValid = false
+            formGroup.classList.add("error");
+            isValid = false;
           } else {
-            formGroup.classList.remove("error")
+            formGroup.classList.remove("error");
           }
-        })
-  
+        });
+
         if (isValid) {
-          // Show loading state
-          const submitBtn = registerFormElement.querySelector(".btn-primary")
-          submitBtn.classList.add("loading")
-          submitBtn.disabled = true
-  
-          // Simulate form submission
-          setTimeout(() => {
-            submitBtn.classList.remove("loading")
-            submitBtn.disabled = false
-  
-            // Show success message
-            const successMessage = document.querySelector(".success-message")
-            if (successMessage) {
-              successMessage.classList.add("show")
-  
-              // Hide success message after 3 seconds
-              setTimeout(() => {
-                successMessage.classList.remove("show")
-              }, 3000)
-            }
-          }, 1500)
+          // Submit the form manually
+          registerFormElement.submit();
         }
-      })
+      });
     }
+
+
+
   
     // Login form validation
     const loginFormElement = document.getElementById("login-form")
@@ -422,3 +452,31 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 })
+
+
+
+
+const expValueDiv = document.getElementById("exp-value");
+const expInput = document.getElementById("experience-input");
+const increaseBtn = document.getElementById("increase-exp");
+const decreaseBtn = document.getElementById("decrease-exp");
+
+let currentValue = 0;
+
+increaseBtn.addEventListener("click", () => {
+    currentValue++;
+    updateExperience();
+});
+
+decreaseBtn.addEventListener("click", () => {
+    if (currentValue > 0) {
+        currentValue--;
+        updateExperience();
+    }
+});
+
+function updateExperience() {
+    expValueDiv.textContent = currentValue;
+    expInput.value = currentValue;
+    decreaseBtn.disabled = currentValue === 0;
+}

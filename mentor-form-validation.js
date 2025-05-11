@@ -113,9 +113,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // If valid, let the original event handler take over
             if (isValid) {
-              // The original event handler will be triggered
-              // because we're not stopping propagation
+              registerForm.submit(); // this manually submits the form
             }
+            
         },
         true,
         ) 
@@ -174,8 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // If valid, let the original event handler take over
             if (isValid) {
-              // The original event handler will be triggered
-              // because we're not stopping propagation
+              loginForm.submit();
             }
         },
         true,

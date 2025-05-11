@@ -11,7 +11,7 @@ try {
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Retrieve form data
         $name       = $_POST['name'];
-        $adresse    = $_POST['adresse'];
+        $email    = $_POST['email'];
         $phone      = $_POST['phone'];
         $major      = $_POST['major'];
         $level      = $_POST['level'];
@@ -23,12 +23,12 @@ try {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
         // Insert into mentor table
-        $sql = "INSERT INTO mentor (name, adresse, phone, major, level, experience, skills, password) 
-                VALUES (:name, :adresse, :phone, :major, :level, :experience, :skills, :password)";
+        $sql = "INSERT INTO mentor (name, email, phone, major, level, experience, skills, password) 
+                VALUES (:name, :email, :phone, :major, :level, :experience, :skills, :password)";
         $stmt = $conn->prepare($sql);
 
         $stmt->bindParam(':name', $name);
-        $stmt->bindParam(':adresse', $adresse);
+        $stmt->bindParam(':email', $email);
         $stmt->bindParam(':phone', $phone);
         $stmt->bindParam(':major', $major);
         $stmt->bindParam(':level', $level);
