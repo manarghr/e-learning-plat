@@ -225,6 +225,26 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       })
   
+      // function addSpecialty() {
+      //   const specialty = specialtyInput.value.trim()
+      //   if (specialty) {
+      //     const tag = document.createElement("div")
+      //     tag.className = "specialty-tag"
+      //     tag.innerHTML = `
+      //       ${specialty}
+      //       <span class="remove-tag">×</span>
+      //     `
+      //     specialtyTags.appendChild(tag)
+      //     specialtyInput.value = ""
+  
+      //     // Add event listener to remove tag
+      //     tag.querySelector(".remove-tag").addEventListener("click", () => {
+      //       tag.remove()
+      //     })
+      //   }
+      // }
+
+
       function addSpecialty() {
         const specialty = specialtyInput.value.trim()
         if (specialty) {
@@ -234,15 +254,25 @@ document.addEventListener("DOMContentLoaded", () => {
             ${specialty}
             <span class="remove-tag">×</span>
           `
+      
+          // Create hidden input
+          const hiddenInput = document.createElement("input")
+          hiddenInput.type = "hidden"
+          hiddenInput.name = "skills[]"
+          hiddenInput.value = specialty
+      
+          // Append both to the DOM
+          tag.appendChild(hiddenInput)
           specialtyTags.appendChild(tag)
           specialtyInput.value = ""
-  
-          // Add event listener to remove tag
+      
+          // Add event listener to remove tag + input
           tag.querySelector(".remove-tag").addEventListener("click", () => {
             tag.remove()
           })
         }
       }
+      
     }
   
     // // Form validation
