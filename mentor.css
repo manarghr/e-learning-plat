@@ -29,33 +29,23 @@
     max-width: 100%;
   }
   
-  /* Button Styles */
-  .btn {
+  .mentor-card .btn {
     display: inline-block;
-    padding: 10px 25px;
-    border-radius: 30px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    text-align: center;
-  }
-  
-  .btn-primary {
-    background-color: #ffa64d;
+    background-color: #ff9933f1;
     color: white;
-  }
-  
-  .btn-primary:hover {
-    background-color: #ff9933;
-  }
-  
-  .btn-secondary {
+    padding: 10px 10px;
+    margin-top: 25px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.mentor-card .btn:hover {
     background-color: #1e3a5f;
-    color: white;
-  }
-  
-  .btn-secondary:hover {
-    background-color: #152c48;
-  }
+    transform: translateY(-3px);
+}
   
   /* Header Styles - Updated to match the image */
   header {
