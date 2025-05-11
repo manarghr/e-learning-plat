@@ -11,13 +11,13 @@ try {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Sanitize & receive data
         $name = $_POST['name'] ?? '';
-        $adresse = $_POST['adresse'] ?? '';
+        $email = $_POST['email'] ?? '';
         $phone = $_POST['phone'] ?? '';
         $major = $_POST['major'] ?? '';
         $level = $_POST['level'] ?? '';
         $password = $_POST['password'] ?? '';
 
-        if (!$name || !$adresse || !$phone || !$major || !$level || !$password) {
+        if (!$name || !$email || !$phone || !$major || !$level || !$password) {
             echo "Error: Missing required fields.";
             exit;
         }
@@ -26,11 +26,11 @@ try {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
         // Insert into DB
-        $sql = "INSERT INTO student (name, adresse, phone, major, level, password)
-                VALUES (:name, :adresse, :phone, :major, :level, :password)";
+        $sql = "INSERT INTO student (name, email, phone, major, level, password)
+                VALUES (:name, :email, :phone, :major, :level, :password)";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':name', $name);
-        $stmt->bindParam(':adresse', $adresse);
+        $stmt->bindParam(':email', $email);
         $stmt->bindParam(':phone', $phone);
         $stmt->bindParam(':major', $major);
         $stmt->bindParam(':level', $level);
