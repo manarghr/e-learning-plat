@@ -122,59 +122,52 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
   
-    // Form validation
-    const registerFormElement = document.getElementById("register-form")
-    if (registerFormElement) {
-      registerFormElement.addEventListener("submit", (e) => {
-        e.preventDefault()
   
-        // Simple validation example
-        let isValid = true
-        const requiredFields = registerFormElement.querySelectorAll("[required]")
+  // Form validation
+  if (registerFormElement) {
+    registerFormElement.addEventListener("submit", (e) => {
+      e.preventDefault() // 
+      // Validation
+      let isValid = true
+      const requiredFields = registerFormElement.querySelectorAll("[required]")
   
-        requiredFields.forEach((field) => {
-          const formGroup = field.closest(".form-group")
-          if (!field.value.trim()) {
-            formGroup.classList.add("error")
-            isValid = false
-          } else {
-            formGroup.classList.remove("error")
-          }
-        })
-  
-        // Check if passwords match
-        const password = document.getElementById("reg-password")
-        const confirmPassword = document.getElementById("reg-confirm-password")
-        if (password && confirmPassword && password.value !== confirmPassword.value) {
-          confirmPassword.closest(".form-group").classList.add("error")
+      requiredFields.forEach((field) => {
+        const formGroup = field.closest(".form-group")
+        if (!field.value.trim()) {
+          formGroup.classList.add("error")
           isValid = false
-        }
-  
-        if (isValid) {
-          // Show loading state
-          const submitBtn = registerFormElement.querySelector(".btn-primary")
-          submitBtn.classList.add("loading")
-          submitBtn.disabled = true
-  
-          // Simulate form submission
-          setTimeout(() => {
-            submitBtn.classList.remove("loading")
-            submitBtn.disabled = false
-  
-            // Show success message
-            const successMessage = document.querySelector(".success-message")
-            if (successMessage) {
-              successMessage.classList.add("show")
-  
-              // Hide success message after 3 seconds
-              setTimeout(() => {
-                successMessage.classList.remove("show")
-              }, 3000)
-            }
-          }, 1500)
+        } else {
+          formGroup.classList.remove("error")
         }
       })
-    }
+  
+      const password = document.getElementById("reg-password")
+      const confirmPassword = document.getElementById("reg-confirm-password")
+      if (password && confirmPassword && password.value !== confirmPassword.value) {
+        confirmPassword.closest(".form-group").classList.add("error")
+        isValid = false
+      }
+  
+      
+      if (!isValid) {
+        e.preventDefault()
+        return
+      }
+  
+      
+    })
+  }
+  
+
+
+
+
+
+
+
+
+
+
   
     // Login form validation
     const loginFormElement = document.getElementById("login-form")
