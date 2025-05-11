@@ -129,7 +129,7 @@
                 </form>
                 
                 <!-- Registration Form -->
-                <form id="register-form" action="register-mentor.php" method="post">
+                <form id="register-form" action="register-mentor.php" method="post" enctype="multipart/form-data">
                     <!-- Profile Information Section -->
                     <div class="form-section">
                         <h3 class="form-section-title">Profile Information</h3>
@@ -147,7 +147,7 @@
                                         <i class="fas fa-camera"></i>
                                     </label>
                                     <label for="profile-upload" class="sr-only">Upload Profile Picture</label>
-                                    <input type="file" id="profile-upload" accept="image/*" class="hidden-upload" title="Upload your profile picture">
+                                    <input type="file" id="profile-upload" name="profile_picture" accept="image/*" class="hidden-upload" title="Upload your profile picture">
                                 </div>
                             </div>
                             <p class="upload-hint">Professional headshot recommended (square image)</p>
