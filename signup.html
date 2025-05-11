@@ -101,7 +101,7 @@
                             <label for="reg-name">Full Name</label>
                             <div class="input-with-icon">
                                 <i class="fas fa-user"></i>
-                                <input type="text" id="reg-name" placeholder="Enter your full name" required>
+                                <input type="text" id="reg-name" name="name" placeholder="Enter your full name" required>
                             </div>
                             <div class="error-message">Please enter your full name</div>
                         </div>
@@ -110,7 +110,7 @@
                             <label for="reg-email">Email Address</label>
                             <div class="input-with-icon">
                                 <i class="fas fa-envelope"></i>
-                                <input type="email" id="reg-email" placeholder="Enter your email address" required>
+                                <input type="email" id="reg-email" name="adresse" placeholder="Enter your email address" required>
                             </div>
                             <div class="error-message">Please enter a valid email address</div>
                         </div>
@@ -119,7 +119,7 @@
                             <label for="reg-phone">Phone Number</label>
                             <div class="input-with-icon">
                                 <i class="fas fa-phone"></i>
-                                <input type="tel" id="reg-phone" placeholder="Enter your phone number" required>
+                                <input type="tel" id="reg-phone" name="phone" placeholder="Enter your phone number" required>
                             </div>
                             <div class="error-message">Please enter a valid phone number</div>
                         </div>
@@ -133,7 +133,7 @@
                             <label for="reg-major">Major</label>
                             <div class="input-with-icon">
                                 <i class="fas fa-graduation-cap"></i>
-                                <input type="text" id="reg-major" placeholder="Enter your major" required>
+                                <input type="text" id="reg-major" name="major" placeholder="Enter your major" required>
                             </div>
                             <div class="error-message">Please enter your major</div>
                         </div>
@@ -142,7 +142,7 @@
                             <label for="reg-level">Education Level</label>
                             <div class="input-with-icon">
                                 <i class="fas fa-level-up-alt"></i>
-                                <select id="reg-level" required>
+                                <select id="reg-level" name="level" required>
                                     <option value="" disabled selected>Select your level</option>
                                     <option value="Freshman">Freshman</option>
                                     <option value="Sophomore">Sophomore</option>
@@ -163,7 +163,7 @@
                             <label for="reg-password">Password</label>
                             <div class="input-with-icon password-input-container">
                                 <i class="fas fa-lock"></i>
-                                <input type="password" id="reg-password" placeholder="Create a password" required>
+                                <input type="password" id="reg-password" name="password" placeholder="Create a password" required>
                                 <span class="toggle-password">👁️</span>
                             </div>
                             <div class="error-message">Password must be at least 8 characters</div>
