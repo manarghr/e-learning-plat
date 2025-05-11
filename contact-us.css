@@ -493,39 +493,7 @@ body {
   background-color: #f9f9f9;
 }
 
-/* Remove or comment out these duplicate header styles */
-/*
-header {
-  background-color: #1e3a5f;
-  padding: 20px 0;
-}
 
-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header .logo img {
-  height: 50px;
-}
-
-header .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-header .nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-header .nav-links a.active {
-  text-decoration: underline;
-}
-*/
 
 .social-icons a {
   display: inline-block;
