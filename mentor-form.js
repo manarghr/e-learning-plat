@@ -225,101 +225,49 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       })
   
-      // function addSpecialty() {
-      //   const specialty = specialtyInput.value.trim()
-      //   if (specialty) {
-      //     const tag = document.createElement("div")
-      //     tag.className = "specialty-tag"
-      //     tag.innerHTML = `
-      //       ${specialty}
-      //       <span class="remove-tag">×</span>
-      //     `
-      //     specialtyTags.appendChild(tag)
-      //     specialtyInput.value = ""
-  
-      //     // Add event listener to remove tag
-      //     tag.querySelector(".remove-tag").addEventListener("click", () => {
-      //       tag.remove()
-      //     })
-      //   }
-      // }
+    
 
 
       function addSpecialty() {
-        const specialty = specialtyInput.value.trim()
+        const specialty = specialtyInput.value.trim();
         if (specialty) {
-          const tag = document.createElement("div")
-          tag.className = "specialty-tag"
-          tag.innerHTML = `
-            ${specialty}
-            <span class="remove-tag">×</span>
-          `
+          // Create the tag container
+          const tag = document.createElement("div");
+          tag.className = "specialty-tag";
       
-          // Create hidden input
-          const hiddenInput = document.createElement("input")
-          hiddenInput.type = "hidden"
-          hiddenInput.name = "skills[]"
-          hiddenInput.value = specialty
+          // Create the visible text and remove button
+          const span = document.createElement("span");
+          span.className = "remove-tag";
+          span.textContent = "×";
       
-          // Append both to the DOM
-          tag.appendChild(hiddenInput)
-          specialtyTags.appendChild(tag)
-          specialtyInput.value = ""
+          // Create hidden input for form submission
+          const hiddenInput = document.createElement("input");
+          hiddenInput.type = "hidden";
+          hiddenInput.name = "skills[]";
+          hiddenInput.value = specialty;
       
-          // Add event listener to remove tag + input
-          tag.querySelector(".remove-tag").addEventListener("click", () => {
-            tag.remove()
-          })
+          // Add specialty text
+          tag.textContent = specialty;
+      
+          // Append hidden input and remove button
+          tag.appendChild(hiddenInput);
+          tag.appendChild(span);
+          specialtyTags.appendChild(tag);
+      
+          // Clear input
+          specialtyInput.value = "";
+      
+          // Add event listener to remove the tag and input
+          span.addEventListener("click", () => {
+            tag.remove();
+          });
         }
       }
       
+      
     }
   
-    // // Form validation
-    // const registerFormElement = document.getElementById("register-form")
-    // if (registerFormElement) {
-    //   registerFormElement.addEventListener("submit", (e) => {
-    //     e.preventDefault()
   
-    //     // Simple validation example
-    //     let isValid = true
-    //     const requiredFields = registerFormElement.querySelectorAll("[required]")
-  
-    //     requiredFields.forEach((field) => {
-    //       const formGroup = field.closest(".form-group")
-    //       if (!field.value.trim()) {
-    //         formGroup.classList.add("error")
-    //         isValid = false
-    //       } else {
-    //         formGroup.classList.remove("error")
-    //       }
-    //     })
-  
-    //     if (isValid) {
-    //       // Show loading state
-    //       const submitBtn = registerFormElement.querySelector(".btn-primary")
-    //       submitBtn.classList.add("loading")
-    //       submitBtn.disabled = true
-  
-    //       // Simulate form submission
-    //       setTimeout(() => {
-    //         submitBtn.classList.remove("loading")
-    //         submitBtn.disabled = false
-  
-    //         // Show success message
-    //         const successMessage = document.querySelector(".success-message")
-    //         if (successMessage) {
-    //           successMessage.classList.add("show")
-  
-    //           // Hide success message after 3 seconds
-    //           setTimeout(() => {
-    //             successMessage.classList.remove("show")
-    //           }, 3000)
-    //         }
-    //       }, 1500)
-    //     }
-    //   })
-    // }
 
 
     const registerFormElement = document.getElementById("register-form");

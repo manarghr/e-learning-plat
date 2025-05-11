@@ -16,11 +16,12 @@ try {
         $major      = $_POST['major'];
         $level      = $_POST['level'];
         $experience = $_POST['experience'];
-        $skills     = $_POST['skills'];
+        $skillsArray = isset($_POST['skills']) && is_array($_POST['skills']) ? $_POST['skills'] : [];
+        $skills = implode(", ", $skillsArray);
         $password   = $_POST['password'];
 
         // Hash password
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        // $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
         // Insert into mentor table
         $sql = "INSERT INTO mentor (name, email, phone, major, level, experience, skills, password) 
