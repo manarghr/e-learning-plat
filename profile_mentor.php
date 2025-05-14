@@ -149,6 +149,7 @@ $about_me_additional = "My goal is to create a supportive learning environment w
                             <th>Level</th>
                             <th>Date</th>
                             <th>Price</th>
+                            <th>Action</th> <!-- Add this new column header -->
                         </tr>
                     </thead>
                     <tbody>
@@ -159,6 +160,10 @@ $about_me_additional = "My goal is to create a supportive learning environment w
                             <td><?php echo htmlspecialchars($course["level"]); ?></td>
                             <td><?php echo date('M d, Y', strtotime($course["date_course"])); ?></td>
                             <td>$<?php echo number_format($course["price"], 2); ?></td>
+                            <td>
+                                <!-- Add this button that links to module.php -->
+                                <a href="module.php?id=<?php echo $course["id_course"]; ?>" class="btn btn-primary">View Module</a>
+                            </td>
                         </tr>
                         <?php endwhile; ?>
                     </tbody>

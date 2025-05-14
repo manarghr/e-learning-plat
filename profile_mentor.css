@@ -550,3 +550,23 @@
     .how-it-works{ 
       background-color:#ffff;
     }
+
+
+    .courses-table .btn {
+    padding: 6px 12px;
+    font-size: 13px;
+    white-space: nowrap;
+    display: inline-block;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.courses-table .btn-primary {
+    background-color: #ffa64d;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.courses-table .btn-primary:hover {
+    background-color: #ff9933;
+}
