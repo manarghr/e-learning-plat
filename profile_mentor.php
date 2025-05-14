@@ -1,4 +1,5 @@
 <?php
+include 'header.php';
 // Database connection parameters
 $servername = "localhost";
 $username = "root";
@@ -66,7 +67,7 @@ $about_me_additional = "My goal is to create a supportive learning environment w
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar
     <header>
         <div class="container">
             <div class="logo">
@@ -85,7 +86,7 @@ $about_me_additional = "My goal is to create a supportive learning environment w
                 <a href="signup.html" class="btn btn-primary">Sign In</a>
             </div>
         </div>
-    </header>
+    </header> -->
 
     <div class="hero-text">
         <h1>Mentor Profile</h1>

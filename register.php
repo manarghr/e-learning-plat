@@ -56,7 +56,7 @@ try {
 
         echo '<script>
             alert("Registration successful!");
-            window.location.href = "index.html";
+            window.location.href = "index.php";
         </script>';
     } else {
         echo "Invalid request method.";

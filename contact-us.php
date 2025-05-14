@@ -43,7 +43,7 @@ include 'header.php';
     <section class="contact-banner">
         <div class="banner-overlay">
             <h1>Contact Us</h1>
-            <p><a href="index.html">Home</a> / Contact</p>
+            <p><a href="index.php">Home</a> / Contact</p>
         </div>
     </section>
 

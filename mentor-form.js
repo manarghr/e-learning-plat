@@ -347,7 +347,7 @@ document.addEventListener("DOMContentLoaded", () => {
               alert("Login successful! Welcome, " + data.user_name);
               
               // Redirect to home page
-              window.location.href = "index.html";
+              window.location.href = "index.php";
             } else {
               // Show error message
               alert(data.message || "Invalid email or password");

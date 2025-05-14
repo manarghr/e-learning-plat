@@ -169,7 +169,7 @@ include 'header.php';
                             <span class="stat-text">Students</span>
                         </div>
                     </div>
-                    <a href="About-us.html" class="btn btn-primary">Learn More</a>
+                    <a href="About-us.php" class="btn btn-primary">Learn More</a>
                 </div>
             </div>
         </div>

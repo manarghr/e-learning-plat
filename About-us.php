@@ -39,7 +39,7 @@ include 'header.php';
     <section class="about-banner">
         <div class="banner-overlay">
             <h1>About Us</h1>
-            <p><a href="index.html">Home</a> / About</p>
+            <p><a href="index.php">Home</a> / About</p>
         </div>
     </section>
 

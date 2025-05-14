@@ -1,4 +1,5 @@
 <?php
+include 'header.php';
 // Database connection parameters
 $servername = "localhost";
 $username = "root";
@@ -99,7 +100,7 @@ $formatted_time = $course_time->format('h:i A');
 </head>
 
 <body>
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar
     <header>
         <div class="container">
             <div class="logo">
@@ -118,7 +119,7 @@ $formatted_time = $course_time->format('h:i A');
                 <a href="signup.html" class="btn btn-primary">Sign In</a>
             </div>
         </div>
-    </header>
+    </header> -->
 
     <!-- Module Content -->
     <div class="container module-container">
@@ -247,7 +248,7 @@ $formatted_time = $course_time->format('h:i A');
             <div class="sidebar-card">
                 <h3>Need Help?</h3>
                 <p>Have questions about this course or need assistance?</p>
-                <a href="contact-us.html" class="btn btn-secondary" style="width: 100%;">Contact Support</a>
+                <a href="contact-us.php" class="btn btn-secondary" style="width: 100%;">Contact Support</a>
             </div>
         </aside>
     </div>

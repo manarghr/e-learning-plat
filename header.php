@@ -12,11 +12,11 @@ $user_name = $logged_in ? $_SESSION['user_name'] : '';
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="index.php" <?php echo (basename($_SERVER['PHP_SELF']) == 'index.html' || basename($_SERVER['PHP_SELF']) == 'index.php') ? 'class="active"' : ''; ?>>HOME</a></li>
-                <li><a href="About-us.php" <?php echo (basename($_SERVER['PHP_SELF']) == 'About-us.html') ? 'class="active"' : ''; ?>>ABOUT US</a></li>
+                <li><a href="index.php" <?php echo (basename($_SERVER['PHP_SELF']) == 'index.php' || basename($_SERVER['PHP_SELF']) == 'index.php') ? 'class="active"' : ''; ?>>HOME</a></li>
+                <li><a href="About-us.php" <?php echo (basename($_SERVER['PHP_SELF']) == 'About-us.php') ? 'class="active"' : ''; ?>>ABOUT US</a></li>
                 <li><a href="courses.php" <?php echo (basename($_SERVER['PHP_SELF']) == 'courses.php') ? 'class="active"' : ''; ?>>COURSES</a></li>
                 <li><a href="mentor.php" <?php echo (basename($_SERVER['PHP_SELF']) == 'mentor.php') ? 'class="active"' : ''; ?>>MENTORS</a></li>
-                <li><a href="contact-us.php" <?php echo (basename($_SERVER['PHP_SELF']) == 'contact-us.html') ? 'class="active"' : ''; ?>>CONTACT US</a></li>
+                <li><a href="contact-us.php" <?php echo (basename($_SERVER['PHP_SELF']) == 'contact-us.php') ? 'class="active"' : ''; ?>>CONTACT US</a></li>
             </ul>
         </nav>
         <div class="sign-in">
