@@ -80,7 +80,7 @@ $total_pages = ceil($total_mentors / $mentors_per_page);
                     if ($result->num_rows > 0) {
     // Output data of each mentor
                         while($row = $result->fetch_assoc()) {
-                            $profile_image = !empty($row["profile_picture"]) ? $row["profile_picture"] : "images/mentor1.png";
+                            $profile_image = !empty($row["profile_picture"]) ? $row["profile_picture"] : "images/download.jpg";
                             
                             echo '<div class="mentor-card">';
                             echo '<div class="mentor-avatar">';
