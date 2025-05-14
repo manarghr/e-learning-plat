@@ -151,7 +151,7 @@ $total_pages = ceil($total_courses / $courses_per_page);
             <?php
             // Check if there are courses
             if ($result->num_rows > 0) {
-                // Output data of each course
+
                 while($row = $result->fetch_assoc()) {
                     // Format the date
                     $date = new DateTime($row["date_course"]);
@@ -163,10 +163,13 @@ $total_pages = ceil($total_courses / $courses_per_page);
                     echo '</div>';
                     echo '<div class="course-content">';
                     echo '<span class="course-category">' . htmlspecialchars($row["major"]) . '</span>';
+                    
+                    
                     echo '<a href="module.php?id=' . $row["id_course"] . '" class="btn btn-primary">View Module</a>';
+                    
                     echo '<h3 class="course-title">' . htmlspecialchars($row["subject"]) . '</h3>';
                     
-                    // Display mentor, major, and level instead of description
+                    
                     echo '<p class="course-description">';
                     echo '<strong>Mentor:</strong> ' . htmlspecialchars($row["mentor_name"]) . '<br>';
                     echo '<strong>Major:</strong> ' . htmlspecialchars($row["major"]) . '<br>';
@@ -174,7 +177,7 @@ $total_pages = ceil($total_courses / $courses_per_page);
                     echo '</p>';
                     
                     echo '<div class="course-meta">';
-                    // Display date instead of hours
+                    
                     echo '<span class="course-duration"><i class="fa fa-calendar"></i> ' . $formatted_date . '</span>';
                     echo '<span class="course-price">$' . number_format($row["price"], 2) . '</span>';
                     echo '</div>';

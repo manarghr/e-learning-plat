@@ -530,3 +530,93 @@
       text-align: center;
     }
   }
+
+
+  .categories {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.category-tag {
+    background-color: #1e3a5f;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.related-courses {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.section-title {
+    color: #1e3a5f;
+    margin-bottom: 20px;
+    font-size: 22px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #ffa64d;
+}
+
+.related-courses-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.related-courses-list li {
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.related-courses-list li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #ffa64d;
+}
+
+.related-courses-list a {
+    color: #1e3a5f;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.related-courses-list a:hover {
+    color: #ffa64d;
+}
+
+.course-level {
+    color: #777;
+    font-size: 0.9em;
+}
+
+.mentor-card .btn {
+    display: inline-block;
+    background-color: #ffa64d;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.mentor-card .btn:hover {
+    background-color: #1e3a5f;
+}
