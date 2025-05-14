@@ -1,4 +1,6 @@
 <?php
+include 'header.php';
+
 // Database connection parameters
 $servername = "localhost";
 $username = "root";
@@ -43,7 +45,7 @@ $total_pages = ceil($total_mentors / $mentors_per_page);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar
     <header>
         <div class="container">
             <div class="logo">
@@ -62,7 +64,7 @@ $total_pages = ceil($total_mentors / $mentors_per_page);
                 <a href="signup.html" class="btn btn-primary">Sign up</a>
             </div>
         </div>
-    </header> 
+    </header>  -->
 
     <div class="hero-text">
         <h1>Meet Our Mentors</h1>
