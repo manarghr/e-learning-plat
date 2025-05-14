@@ -42,9 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (closeBtn) {
       closeBtn.addEventListener("click", () => {
         // Redirect to home page or close the form
-        window.location.href = "index.html" // Change this to your home page URL
-        // Alternatively, if this is in a modal, you can close the modal
-        // modalElement.style.display = "none";
+        window.location.href = "index.php" 
       })
     }
   
