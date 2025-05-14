@@ -53,8 +53,8 @@ $total_pages = ceil($total_mentors / $mentors_per_page);
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">HOME</a></li>
                     <li><a href="About-us.html">ABOUT US</a></li>
-                    <li><a href="courses.html">COURSES</a></li>
-                    <li><a href="mentor.html">MENTORS</a></li>
+                    <li><a href="courses.php">COURSES</a></li>
+                    <li><a href="mentor.php">MENTORS</a></li>
                     <li><a href="contact-us.html">CONTACT US</a></li>
                 </ul>
             </nav>
