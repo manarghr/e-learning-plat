@@ -465,5 +465,6 @@ include 'header.php';
     </footer>
 
     <script src="script.js"></script>
+    <script src="common.js"></script>
 </body>
 </html>

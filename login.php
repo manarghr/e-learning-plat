@@ -45,26 +45,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         
         // Verify password if user found
-        if ($user_data && password_verify($password, $user_data['password'])) {
-            // Set session variables
-            $_SESSION['logged_in'] = true;
-            $_SESSION['user_type'] = $user_type;
-            $_SESSION['user_id'] = $user_type == 'student' ? $user_data['id_student'] : $user_data['id_mentor'];
-            $_SESSION['user_name'] = $user_data['name'];
-            $_SESSION['user_email'] = $user_data['email'];
-            
-            // Return success response for AJAX
-            echo json_encode([
-                'status' => 'success',
-                'message' => 'Login successful',
-                'user_type' => $user_type,
-                'user_name' => $user_data['name']
-            ]);
+        if ($user_data) {
+            if (password_verify($password, $user_data['password'])) {
+                // Set session variables
+                $_SESSION['logged_in'] = true;
+                $_SESSION['user_type'] = $user_type;
+                $_SESSION['user_id'] = $user_type == 'student' ? $user_data['id_student'] : $user_data['id_mentor'];
+                $_SESSION['user_name'] = $user_data['name'];
+                $_SESSION['user_email'] = $user_data['email'];
+                
+                // Return success response for AJAX
+                echo json_encode([
+                    'status' => 'success',
+                    'message' => 'Login successful',
+                    'user_type' => $user_type,
+                    'user_name' => $user_data['name']
+                ]);
+            } else {
+                // Password is incorrect
+                echo json_encode([
+                    'status' => 'error',
+                    'message' => 'Incorrect password. Please try again.'
+                ]);
+            }
         } else {
-            // Return error response for AJAX
+            // Email not found in either table
             echo json_encode([
                 'status' => 'error',
-                'message' => 'Invalid email or password'
+                'message' => 'Email not found. Please register first.'
             ]);
         }
     } catch (PDOException $e) {
