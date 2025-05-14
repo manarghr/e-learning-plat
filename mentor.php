@@ -76,10 +76,9 @@ $total_pages = ceil($total_mentors / $mentors_per_page);
                     <?php
                     // Check if there are mentors
                     if ($result->num_rows > 0) {
-                        // Output data of each mentor
+    // Output data of each mentor
                         while($row = $result->fetch_assoc()) {
-                            // Set default image if profile_picture is empty
-                            $profile_image = !empty($row["profile_picture"]) ? $row["profile_picture"] : "mentor_images/mentor1.jpg";
+                            $profile_image = !empty($row["profile_picture"]) ? $row["profile_picture"] : "images/mentor1.png";
                             
                             echo '<div class="mentor-card">';
                             echo '<div class="mentor-avatar">';
@@ -88,6 +87,7 @@ $total_pages = ceil($total_mentors / $mentors_per_page);
                             echo '<h4 class="mentor-name">' . htmlspecialchars($row["name"]) . '</h4>';
                             echo '<p class="mentor-specialty">' . htmlspecialchars($row["major"]) . '</p>';
                             echo '<a href="profile_mentor.php?id=' . $row["id_mentor"] . '" class="btn btn-primary">View Profile</a>';
+                            
                             echo '</div>';
                         }
                     } else {
