@@ -18,7 +18,24 @@ try {
         $password = $_POST['password'] ?? '';
 
         if (!$name || !$email || !$phone || !$major || !$level || !$password) {
-            echo "Error: Missing required fields.";
+            echo '<script>
+                alert("Error: Missing required fields.");
+                window.history.back();
+            </script>';
+            exit;
+        }
+
+        // Check if email already exists
+        $check_email = $conn->prepare("SELECT COUNT(*) FROM student WHERE email = :email");
+        $check_email->bindParam(':email', $email);
+        $check_email->execute();
+        
+        if ($check_email->fetchColumn() > 0) {
+            // Email already exists, show JavaScript alert and stop execution
+            echo '<script>
+                alert("This email address is already registered. Please use a different email.");
+                window.history.back();
+            </script>';
             exit;
         }
 
@@ -37,10 +54,17 @@ try {
         $stmt->bindParam(':password', $hashed_password);
         $stmt->execute();
 
-        echo "Registration successful!";
+        echo '<script>
+            alert("Registration successful!");
+            window.location.href = "index.html";
+        </script>';
     } else {
         echo "Invalid request method.";
     }
 } catch (PDOException $e) {
-    echo "Database error: " . $e->getMessage();
+    echo '<script>
+        alert("Database error: ' . str_replace("'", "\'", $e->getMessage()) . '");
+        window.history.back();
+    </script>';
 }
+?>
