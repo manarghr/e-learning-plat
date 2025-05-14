@@ -11,6 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnPrimary = document.querySelectorAll(".btn-primary")
   const userTypeBtn = document.querySelector(".user-type-btn")
 
+  // Check for registration error in URL parameters
+  const urlParams = new URLSearchParams(window.location.search)
+  if (urlParams.has("error")) {
+    const errorMessage = urlParams.get("error")
+    if (errorMessage) {
+      alert(decodeURIComponent(errorMessage))
+    }
+  }
+
   // By default, show register form first
   registerTab.classList.add("active")
   loginTab.classList.remove("active")
@@ -111,21 +120,23 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   // Color switching for user type button
-  userTypeBtn.addEventListener("click", function () {
-    if (
-      this.style.backgroundColor === "var(--primary-color)" ||
-      getComputedStyle(this).backgroundColor === "rgb(30, 58, 95)"
-    ) {
-      this.style.backgroundColor = "var(--secondary-color)"
-    } else {
-      this.style.backgroundColor = "var(--primary-color)"
-    }
-  })
+  if (userTypeBtn) {
+    userTypeBtn.addEventListener("click", function () {
+      if (
+        this.style.backgroundColor === "var(--primary-color)" ||
+        getComputedStyle(this).backgroundColor === "rgb(30, 58, 95)"
+      ) {
+        this.style.backgroundColor = "var(--secondary-color)"
+      } else {
+        this.style.backgroundColor = "var(--primary-color)"
+      }
+    })
+  }
 
   // Form validation
+  const registerFormElement = document.getElementById("register-form")
   if (registerFormElement) {
     registerFormElement.addEventListener("submit", (e) => {
-      e.preventDefault() //
       // Validation
       let isValid = true
       const requiredFields = registerFormElement.querySelectorAll("[required]")
@@ -278,7 +289,24 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
   })
+
+  // Check for session messages
+  checkSessionMessages()
 })
+
+// Function to check for session messages
+function checkSessionMessages() {
+  fetch("check-messages.php")
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.registration_error) {
+        alert(data.registration_error)
+      }
+    })
+    .catch((error) => {
+      console.error("Error checking messages:", error)
+    })
+}
 
 // Function to update header without page refresh (optional)
 function updateHeaderAfterLogin(userName) {

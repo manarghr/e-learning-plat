@@ -149,36 +149,36 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         })
 
-        // Override the submit event with more comprehensive validation
-        loginForm.addEventListener(
-        "submit",
-        (e) => {
-            e.preventDefault()
-
-            let isValid = true
-            let firstInvalidField = null
-
+        // For login form, only add validation but don't override submission
+        // This allows the AJAX handler in mentor-form.js to work
+        loginForm.addEventListener("invalid", function(e) {
+            e.preventDefault();
+            validateField(e.target);
+        }, true);
+        
+        // Add validation check before form submission without overriding it
+        loginForm.addEventListener("submit", function(e) {
+            let isValid = true;
+            let firstInvalidField = null;
+            
             // Validate all required fields
             requiredFields.forEach((field) => {
-            if (!validateField(field) && !firstInvalidField) {
-                firstInvalidField = field
-                isValid = false
+                if (!validateField(field) && !firstInvalidField) {
+                    firstInvalidField = field;
+                    isValid = false;
+                }
+            });
+            
+            // If not valid, prevent default and focus on first invalid field
+            if (!isValid) {
+                e.preventDefault();
+                if (firstInvalidField) {
+                    firstInvalidField.focus();
+                    firstInvalidField.scrollIntoView({ behavior: "smooth", block: "center" });
+                }
             }
-            })
-
-            // Scroll to the first invalid field
-            if (firstInvalidField) {
-            firstInvalidField.focus()
-            firstInvalidField.scrollIntoView({ behavior: "smooth", block: "center" })
-            }
-
-            // If valid, let the original event handler take over
-            if (isValid) {
-              loginForm.submit();
-            }
-        },
-        true,
-        ) // Use capturing to run before the original handler
+            // If valid, let the event continue to the AJAX handler in mentor-form.js
+        });
     }
 
       // Helper function to validate a field

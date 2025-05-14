@@ -26,6 +26,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const tabSlider = document.querySelector(".tab-slider")
   const closeBtn = document.getElementById("close-btn")
 
+  // Check for registration error in URL parameters
+  const urlParams = new URLSearchParams(window.location.search)
+  if (urlParams.has("error")) {
+    const errorMessage = urlParams.get("error")
+    if (errorMessage) {
+      alert(decodeURIComponent(errorMessage))
+    }
+  }
+
   // By default, show register form first
   registerTab.classList.add("active")
   loginTab.classList.remove("active")
@@ -422,6 +431,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Run on window resize to maintain the circular shape
   window.addEventListener("resize", fixCircularImages)
+
+  // Check for session messages
+  checkSessionMessages()
 })
 
 // Make the floating symbols more dynamic
@@ -479,6 +491,20 @@ function updateExperience() {
   expValueDiv.textContent = currentValue
   expInput.value = currentValue
   decreaseBtn.disabled = currentValue === 0
+}
+
+// Function to check for session messages
+function checkSessionMessages() {
+  fetch("check-messages.php")
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.registration_error) {
+        alert(data.registration_error)
+      }
+    })
+    .catch((error) => {
+      console.error("Error checking messages:", error)
+    })
 }
 
 // Function to update header without page refresh (optional)

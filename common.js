@@ -71,7 +71,12 @@ function handleLogout(event) {
   // This can be used for a client-side logout without page refresh
   event.preventDefault()
 
-  fetch("logout.php")
+  fetch("logout.php", {
+    method: "POST",
+    headers: {
+      "X-Requested-With": "XMLHttpRequest",
+    },
+  })
     .then((response) => response.json())
     .then((data) => {
       if (data.status === "success") {
