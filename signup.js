@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (closeBtn) {
       closeBtn.addEventListener("click", () => {
         // Redirect to home page or close the form
-        window.location.href = "index.html" // Change this to your home page URL
+        window.location.href = "index.php" // Change this to your home page URL
       })
     }
   
@@ -162,41 +162,69 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
     // Login form validation
-    const loginFormElement = document.getElementById("login-form")
+    const loginFormElement = document.getElementById("login-form");
     if (loginFormElement) {
-      loginFormElement.addEventListener("submit", (e) => {
-        e.preventDefault()
-  
+      loginFormElement.addEventListener("submit", function(e) {
+        e.preventDefault(); // Prevent default form submission
+        
         // Simple validation
-        let isValid = true
-        const requiredFields = loginFormElement.querySelectorAll("[required]")
-  
+        let isValid = true;
+        const requiredFields = loginFormElement.querySelectorAll("[required]");
+        
         requiredFields.forEach((field) => {
-          const formGroup = field.closest(".form-group")
+          const formGroup = field.closest(".form-group");
           if (!field.value.trim()) {
-            formGroup.classList.add("error")
-            isValid = false
+            formGroup.classList.add("error");
+            isValid = false;
           } else {
-            formGroup.classList.remove("error")
+            formGroup.classList.remove("error");
           }
-        })
-  
+        });
+        
         if (isValid) {
           // Show loading state
-          const submitBtn = loginFormElement.querySelector(".btn-primary")
-          submitBtn.classList.add("loading")
-          submitBtn.disabled = true
-  
-          // Simulate login
-          setTimeout(() => {
-            submitBtn.classList.remove("loading")
-            submitBtn.disabled = false
-  
-            // Redirect to dashboard or home page after successful login
-            // window.location.href = "dashboard.html";
-          }, 1500)
+          const submitBtn = loginFormElement.querySelector(".btn-primary");
+          submitBtn.classList.add("loading");
+          submitBtn.disabled = true;
+          
+          // Get form data
+          const email = document.getElementById("login-email").value;
+          const password = document.getElementById("login-password").value;
+          
+          // Create form data object
+          const formData = new FormData();
+          formData.append("email", email);
+          formData.append("password", password);
+          
+          // Send AJAX request
+          fetch("login.php", {
+            method: "POST",
+            body: formData
+          })
+          .then(response => response.json())
+          .then(data => {
+            submitBtn.classList.remove("loading");
+            submitBtn.disabled = false;
+            
+            if (data.status === "success") {
+              // Show success message
+              alert("Login successful! Welcome, " + data.user_name);
+              
+              // Redirect to home page
+              window.location.href = "index.html";
+            } else {
+              // Show error message
+              alert(data.message || "Invalid email or password");
+            }
+          })
+          .catch(error => {
+            submitBtn.classList.remove("loading");
+            submitBtn.disabled = false;
+            alert("An error occurred. Please try again.");
+            console.error("Error:", error);
+          });
         }
-      })
+      });
     }
   
     // Function to animate form elements

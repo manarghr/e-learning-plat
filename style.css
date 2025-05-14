@@ -1385,3 +1385,18 @@ testimonials .section-title {
 .stars i {
   margin-right: 2px;
 }
+
+
+
+.user-welcome {
+    margin-right: 15px;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+
+.sign-in {
+    display: flex;
+    align-items: center;
+}

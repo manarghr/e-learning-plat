@@ -1,3 +1,7 @@
+<?php
+
+include 'header.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +17,7 @@
 </head>
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar
     <header>
         <div class="container">
             <div class="logo">
@@ -32,7 +36,7 @@
                 <a href="signup.html" class="btn btn-primary">Sign In</a>
             </div>
         </div>
-    </header>
+    </header> -->
 
 
 <!-- Hero Section -->
